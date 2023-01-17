@@ -1,0 +1,263 @@
+<%- include("./include/header.ejs") %>
+<link rel="stylesheet" href="../css/splitting.css" />
+<link rel="stylesheet" href="../css/swiper.css" />
+<script src="../js/splitting.min.js"></script>
+<script src="../js/gsap/gsap.min.js"></script>
+<script src="../js/gsap/ScrollTrigger.min.js"></script>
+<script src="../js/swiper.js"></script>
+<%- include("./gnb-header.ejs") %>
+
+<main class="main">
+  <section class="main_title">
+    <div class="main_title__visual Swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide item1">Slide 1</div>
+        <div class="swiper-slide item2">Slide 2</div>
+        <div class="swiper-slide item3">Slide 3</div>
+        <div class="swiper-slide item4">Slide 4</div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination main_title__pagination"></div>
+    </div>
+    <div class="container">
+      <div class="main_title__text">
+        <h2 data-splitting>
+          BEST OF THE WORLD <br />
+          STX Engineering & Construction
+        </h2>
+        <p>세계최고를 향해 STX건설이 힘차게 질주합니다!</p>
+      </div>
+      <div class="main_title__btn">
+        <button type="button" class="btn btn-scroll">스크롤 버튼</button>
+      </div>
+    </div>
+  </section>
+  <section class="main_business">
+    <div class="container">
+      <div class="main_business__title">
+        <h2>STX Engineering & Construction Business</h2>
+        <p>
+          STX건설은 건문 역량 강화를 통해 건축, 주택, 토목, 플랜트 사업 영역에서 <br />
+          탁월한 성과를 인정받은 기업으로 자연과 기술의 공간에 인류의 가치를 추구합니다.
+        </p>
+      </div>
+      <div class="main_business__list">
+        <ul>
+          <li class="list1">
+            <a class="list-text">
+              <p>건축사업</p>
+              <div class="list_img"></div>
+              <div class="list_img_hover"></div>
+            </a>
+          </li>
+          <li class="list2">
+            <a class="list-text">
+              <p>주택사업</p>
+              <div class="list_img"></div>
+              <div class="list_img_hover"></div>
+            </a>
+          </li>
+          <li class="list3">
+            <a class="list-text">
+              <p>토목사업</p>
+              <div class="list_img"></div>
+              <div class="list_img_hover"></div>
+            </a>
+          </li>
+          <li class="list4">
+            <a class="list-text">
+              <p>플랜트/공작기계사업</p>
+              <div class="list_img"></div>
+              <div class="list_img_hover"></div>
+            </a>
+          </li>
+          <li class="list5">
+            <a class="list-text">
+              <p>해외사업</p>
+              <div class="list_img"></div>
+              <div class="list_img_hover"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="main-board">
+    <div class="container main-board--wrap">
+      <div class="main-board__notice">
+        <div class="content-area">
+          <ul>
+            <h2>공지사항</h2>
+            <li>
+              <a href="">
+                <p><span>사무실 이전 안내</span><span class="btn-more"></span></p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p>
+                  <span
+                    >에스티엑스건설자산관리 주식회사 해산결의에 따른 채권신고 안내 공고 (2차)
+                  </span>
+                  <span class="btn-more"></span>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p>
+                  <span
+                    >에스티엑스건설자산관리 주식회사 해산결의에 따른 채권신고 안내 공고 (1차)</span
+                  ><span class="btn-more"></span>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p><span>2021년도 협력업체 모집공고</span><span class="btn-more"></span></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-board__news">
+        <div class="content-area">
+          <ul>
+            <h2>NEWS</h2>
+            <li>
+              <a href="">
+                <p><span>회생절차 종료</span><span class="btn-more"></span></p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p>
+                  <span>STX건설, 춘천 레고랜드 테마파크 시공사 '선정'</span
+                  ><span class="btn-more"></span>
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p><span>STX건설, 2018년 성장 '청신호'</span><span class="btn-more"></span></p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main-ask">
+    <div class="container">
+      <div class="main-ask__faq">
+        <a href="">
+          <h3>FAQ</h3>
+          <p>
+            STX건설 고객님들을 위해 <br />
+            자주하시는 질문과 답변을 정리하였습니다.
+          </p>
+        </a>
+      </div>
+      <div class="main-ask__service">
+        <a href="">
+          <h3>고객문의</h3>
+          <p>
+            STX건설 고객상담은 고객만족 <br />
+            서비스를 위하여 최선을 다하고 있습니다.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="main-about">
+    <div class="container">
+      <div class="main-about__text">
+        <div class="text-wrap">
+          <div class="main-about__text__title">
+            <h2>ABOUT US</h2>
+          </div>
+          <div class="main-about__text__content">
+            <span class="text-line"></span>
+            <div class="text-wrap">
+              <h3>
+                고객의 믿음과 신뢰로 성장하는 <br />
+                STX건설이 되겠습니다.
+              </h3>
+              <p>
+                STX건설 이름으로 세계 어디에서, 시계 누구와 겨뤄도 <br />
+                자신 있는 세계 최고를 향해 웅비합니다. STX건설이라는 날개를
+                <br />
+                하나 더 피고 세계로, 미래로 나아가는 STX건설의 힘찬 비상을 주목해 <br />
+                주십시오.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-about__visual">
+        <ul class="img_area">
+          <li class="img1">
+            <a href="">
+              <span>경영이념</span>
+            </a>
+          </li>
+          <li class="img2">
+            <a href="">
+              <span>공유가치</span>
+            </a>
+          </li>
+          <li class="img3">
+            <a href="">
+              <span>중장기전략</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include("./footer.ejs") %>
+<script>
+  Splitting();
+</script>
+<script>
+  //gsap
+  gsap.from(".char", { y: 300, color: "#00ff00", duration: 2, stagger: 0.02 });
+
+  //swiper
+
+  var swiper = new Swiper(".Swiper", {
+    slidesPerView: 1, // 한 슬라이드에 보여줄 갯수
+    centeredSlides: true, //센터모드
+    effect: "cube",
+
+    loop: true, // 슬라이드 반복 여부
+
+    loopAdditionalSlides: 1,
+
+    // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+    pagination: {
+      // 호출(pager) 여부
+      el: ".swiper-pagination", //버튼을 담을 태그 설정
+      clickable: true, // 버튼 클릭 여부
+    },
+  });
+
+  gsap.to(".char", {
+    x: 400,
+    rotation: 360,
+
+    scrollTrigger: {
+      trigger: ".char",
+      start: "200px 90%",
+      end: "500px top",
+      scrub: true,
+      markers: true,
+      id: "scrub",
+    },
+  });
+</script>
+<%- include("./include/closer.ejs") %>
