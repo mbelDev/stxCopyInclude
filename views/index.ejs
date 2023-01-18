@@ -19,7 +19,10 @@
         <div class="swiper-slide item4">Slide 4</div>
       </div>
       <!-- If we need pagination -->
-      <div class="swiper-pagination main_title__pagination"></div>
+      <div class="swiper-pagination main_title__pagination pagination">
+        <div class="main_title__pagination-box pagination-box"></div>
+        <button class="btn btn-pause"></button>
+      </div>
     </div>
     <div class="container">
       <div class="main_title__text">
@@ -45,41 +48,22 @@
       </div>
       <div class="main_business__list">
         <ul>
-          <li class="list1">
+          <!-- prettier-ignore -->
+          <% for(let i=1;i<6;i++){%>
+          <% let cont="임시사업";%>
+          <% if(i==1){cont="건축사업"} %> 
+          <% if(i==2){cont="주택사업"} %>
+          <% if(i==3){cont="토목사업"} %> 
+          <% if(i==4){cont="플랜트/공작기계사업"} %> 
+          <% if(i==5){cont="해외사업"} %>
+          <li class="list<%=i%>">
             <a class="list-text">
-              <p>건축사업</p>
+              <p><%= cont%></p>
               <div class="list_img"></div>
               <div class="list_img_hover"></div>
             </a>
           </li>
-          <li class="list2">
-            <a class="list-text">
-              <p>주택사업</p>
-              <div class="list_img"></div>
-              <div class="list_img_hover"></div>
-            </a>
-          </li>
-          <li class="list3">
-            <a class="list-text">
-              <p>토목사업</p>
-              <div class="list_img"></div>
-              <div class="list_img_hover"></div>
-            </a>
-          </li>
-          <li class="list4">
-            <a class="list-text">
-              <p>플랜트/공작기계사업</p>
-              <div class="list_img"></div>
-              <div class="list_img_hover"></div>
-            </a>
-          </li>
-          <li class="list5">
-            <a class="list-text">
-              <p>해외사업</p>
-              <div class="list_img"></div>
-              <div class="list_img_hover"></div>
-            </a>
-          </li>
+          <%}%>
         </ul>
       </div>
     </div>
@@ -198,21 +182,18 @@
       </div>
       <div class="main-about__visual">
         <ul class="img_area">
-          <li class="img1">
+          <!-- prettier-ignore -->
+          <% for(let i=1;i<4;i++){%>
+            <% let cont="임시가치"%>
+            <% if (i==1){ cont="경영이념"} %>
+            <% if (i==2){ cont="공유가치"} %>
+            <% if (i==3){ cont="중장기전략"} %>
+          <li class="img<%=i%>">
             <a href="">
-              <span>경영이념</span>
+              <span> <%= cont%> </span>
             </a>
           </li>
-          <li class="img2">
-            <a href="">
-              <span>공유가치</span>
-            </a>
-          </li>
-          <li class="img3">
-            <a href="">
-              <span>중장기전략</span>
-            </a>
-          </li>
+          <%}%>
         </ul>
       </div>
     </div>
@@ -224,16 +205,43 @@
   Splitting();
 </script>
 <script>
+  //btn--scroll
+  const btnPause = document.querySelector(".btn-pause");
+  btnPause.addEventListener("click", function () {
+    if (swiper.autoplay.paused) {
+      swiper.autoplay.run();
+      btnPause.classList.remove("off");
+    } else {
+      swiper.autoplay.pause();
+      btnPause.classList.add("off");
+    }
+  });
   //gsap
   gsap.from(".char", { y: 300, color: "#00ff00", duration: 2, stagger: 0.02 });
+  gsap.to(".char", {
+    x: 400,
+    rotation: 360,
 
+    scrollTrigger: {
+      trigger: ".char",
+      start: "250px 85%",
+      end: "top 200px",
+      scrub: true,
+      markers: false,
+      id: "scrub",
+    },
+  });
   //swiper
 
   var swiper = new Swiper(".Swiper", {
     slidesPerView: 1, // 한 슬라이드에 보여줄 갯수
     centeredSlides: true, //센터모드
     effect: "cube",
-
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     loop: true, // 슬라이드 반복 여부
 
     loopAdditionalSlides: 1,
@@ -241,22 +249,9 @@
     // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
     pagination: {
       // 호출(pager) 여부
-      el: ".swiper-pagination", //버튼을 담을 태그 설정
+      el: ".main_title__pagination-box", //버튼을 담을 태그 설정
       clickable: true, // 버튼 클릭 여부
-    },
-  });
-
-  gsap.to(".char", {
-    x: 400,
-    rotation: 360,
-
-    scrollTrigger: {
-      trigger: ".char",
-      start: "200px 90%",
-      end: "500px top",
-      scrub: true,
-      markers: true,
-      id: "scrub",
+      type: "bullets",
     },
   });
 </script>

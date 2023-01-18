@@ -26,15 +26,16 @@ section {
   }
   &__text {
     position: absolute;
-    top: 230px;
+    top: 330px;
     left: 14%;
     text-align: left;
+    text-shadow: 3px 3px 5px #0f0f0f;
     h2 {
       position: relative;
       color: #fff;
       font-size: 70px;
       font-family: "NotoSansMedium";
-      line-height: 1.1;
+      line-height: 1.5;
       overflow: hidden;
       &:after {
         position: absolute;
@@ -54,16 +55,58 @@ section {
   }
   &__btn {
     position: absolute;
-    bottom: 40px;
+    bottom: 90px;
     left: 50%;
+    width: auto;
     .btn-scroll {
       width: 33px;
       height: 33px;
       background-position: -122px 0;
     }
   }
-  &__pagination {
+  .pagination {
+    position: absolute;
     top: 90%;
+    bottom: 50px;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .pagination-box {
+      width: auto;
+    }
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 20px;
+      height: 20px;
+      background: none;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      transition: all 0.25s ease;
+      &-active {
+        background-color: #fff;
+        width: 120px;
+      }
+    }
+    .btn-pause {
+      width: 27px;
+      height: 27px;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &.off:before {
+        content: " \e030";
+      }
+      &:before {
+        content: " \e034";
+        font-family: "Material Icons";
+        color: #111;
+        font-size: 20px;
+      }
+    }
   }
   .swiper-slide {
   }
@@ -120,6 +163,7 @@ section {
       display: table;
       width: 1200px;
       margin: 70px auto 0;
+
       li {
         display: inline-block;
       }
@@ -151,7 +195,7 @@ section {
           height: 112px;
           top: 25%;
           left: 25%;
-          background-position: -168px 0px;
+          // background-position: -168px 0px;
         }
       }
       .list_img {
@@ -161,44 +205,24 @@ section {
       }
       .list_img_hover {
       }
-      .list1 {
-        a:hover::after {
-          background-position: -168px 0px;
+      @for $i from 0 to 2 {
+        $v21: 0;
+        $count: 0;
+        @if ($i==0) {
+          $v21: -21;
         }
-        .list_img {
-          background-position: 0px 0px;
-        }
-      }
-      .list2 {
-        a:hover::after {
-          background-position: -301px 0px;
-        }
-        .list_img {
-          background-position: -240px 0px;
-        }
-      }
-      .list3 {
-        a:hover::after {
-          background-position: 0px -122px;
-        }
-        .list_img {
-          background-position: -480px 0px;
-        }
-      }
-      .list4 {
-        a:hover::after {
-          background-position: -140px -122px;
-        }
-        .list_img {
-          background-position: -720px 0px;
-        }
-      }
-      .list5 {
-        a:hover::after {
-          background-position: -280px -122px;
-        }
-        .list_img {
-          background-position: -960px 0px;
+        @for $j from 0 to 3 {
+          $count: $i * 3 + $j;
+          $back-position: $v21 + ($j * -140);
+          .list#{$count} {
+            a:hover::after {
+              background-position: #{$back-position}px $i * -122px;
+              content: "#{$back-position},#{$i*-122},#{$i},#{$j}";
+            }
+            .list_img {
+              background-position: ($count - 1) * -240px 0px;
+            }
+          }
         }
       }
     }
@@ -352,25 +376,20 @@ section {
         font-family: "NotoSansMedium";
         color: #111;
       }
-      .img1 {
-        a {
-          width: 103px;
-          height: 108px;
-          background-position: 0px 0px;
+      @for $i from 1 to 4 {
+        $j: $i - 1;
+        $k: 0;
+        @if ($i==3) {
+          $k: 5;
         }
-      }
-      .img2 {
-        a {
-          width: 103px;
-          height: 108px;
-          background-position: -120px 0px;
-        }
-      }
-      .img3 {
-        a {
-          width: 103px;
-          height: 108px;
-          background-position: -235px 0px;
+        $l: -120 * $j + $k;
+        .img#{$i} {
+          a {
+            content: "#{$l}";
+            width: 103px;
+            height: 108px;
+            background-position: #{$l}px 0px;
+          }
         }
       }
     }

@@ -24,16 +24,17 @@ section .container {
 }
 .main_title__text {
   position: absolute;
-  top: 230px;
+  top: 330px;
   left: 14%;
   text-align: left;
+  text-shadow: 3px 3px 5px #0f0f0f;
 }
 .main_title__text h2 {
   position: relative;
   color: #fff;
   font-size: 70px;
   font-family: "NotoSansMedium";
-  line-height: 1.1;
+  line-height: 1.5;
   overflow: hidden;
 }
 .main_title__text h2:after {
@@ -52,16 +53,58 @@ section .container {
 }
 .main_title__btn {
   position: absolute;
-  bottom: 40px;
+  bottom: 90px;
   left: 50%;
+  width: auto;
 }
 .main_title__btn .btn-scroll {
   width: 33px;
   height: 33px;
   background-position: -122px 0;
 }
-.main_title__pagination {
+.main_title .pagination {
+  position: absolute;
   top: 90%;
+  bottom: 50px;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main_title .pagination .pagination-box {
+  width: auto;
+}
+.main_title .pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: all 0.25s ease;
+}
+.main_title .pagination .swiper-pagination-bullet-active {
+  background-color: #fff;
+  width: 120px;
+}
+.main_title .pagination .btn-pause {
+  width: 27px;
+  height: 27px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.main_title .pagination .btn-pause.off:before {
+  content: " \e030";
+}
+.main_title .pagination .btn-pause:before {
+  content: " \e034";
+  font-family: "Material Icons";
+  color: #111;
+  font-size: 20px;
 }
 .main_title .swiper-wrapper {
   height: 100%;
@@ -148,39 +191,50 @@ section .container {
   height: 112px;
   top: 25%;
   left: 25%;
-  background-position: -168px 0px;
 }
 .main_business__list ul .list_img {
   width: 240px;
   height: 420px;
   background: url(../img/main/img_business.png) no-repeat;
 }
+.main_business__list ul .list0 a:hover::after {
+  background-position: -21px 0px;
+  content: "-21,0,0,0";
+}
+.main_business__list ul .list0 .list_img {
+  background-position: 240px 0px;
+}
 .main_business__list ul .list1 a:hover::after {
-  background-position: -168px 0px;
+  background-position: -161px 0px;
+  content: "-161,0,0,1";
 }
 .main_business__list ul .list1 .list_img {
   background-position: 0px 0px;
 }
 .main_business__list ul .list2 a:hover::after {
   background-position: -301px 0px;
+  content: "-301,0,0,2";
 }
 .main_business__list ul .list2 .list_img {
   background-position: -240px 0px;
 }
 .main_business__list ul .list3 a:hover::after {
   background-position: 0px -122px;
+  content: "0,-122,1,0";
 }
 .main_business__list ul .list3 .list_img {
   background-position: -480px 0px;
 }
 .main_business__list ul .list4 a:hover::after {
   background-position: -140px -122px;
+  content: "-140,-122,1,1";
 }
 .main_business__list ul .list4 .list_img {
   background-position: -720px 0px;
 }
 .main_business__list ul .list5 a:hover::after {
   background-position: -280px -122px;
+  content: "-280,-122,1,2";
 }
 .main_business__list ul .list5 .list_img {
   background-position: -960px 0px;
@@ -334,16 +388,19 @@ section .container {
   color: #111;
 }
 .main-about__visual > ul .img1 a {
+  content: "0";
   width: 103px;
   height: 108px;
   background-position: 0px 0px;
 }
 .main-about__visual > ul .img2 a {
+  content: "-120";
   width: 103px;
   height: 108px;
   background-position: -120px 0px;
 }
 .main-about__visual > ul .img3 a {
+  content: "-235";
   width: 103px;
   height: 108px;
   background-position: -235px 0px;
